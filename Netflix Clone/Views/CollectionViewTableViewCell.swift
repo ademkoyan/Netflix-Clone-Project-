@@ -49,6 +49,4 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
         cell.backgroundColor = .green
         return cell
     }
-    
-    
 }

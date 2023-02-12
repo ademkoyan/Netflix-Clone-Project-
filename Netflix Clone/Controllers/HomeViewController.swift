@@ -19,21 +19,35 @@ class HomeViewController: UIViewController {
     //MARK: -LC
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemPurple
         view.addSubview(homeFeedTable)
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
         
+        let headerHeroView = HeaderHeroImageView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 375))
+        homeFeedTable.tableHeaderView =  headerHeroView
+        
+        configureNavBar()
+        
     }
-    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         homeFeedTable.frame = view.bounds
     }
-    //MARK: -EXT
+    
+    private func configureNavBar() {
+        var image = UIImage(named: "netflix-logo")
+        image = image?.withRenderingMode(.alwaysOriginal)
+        
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(image: image, style: .done, target: self, action: nil),
+            UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil),
+            UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action: nil)
+        ]
+    }
 }
-
+    
+    //MARK: -EXT
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     //Tablonun kendini tekrarlama sayısı
