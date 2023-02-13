@@ -5,7 +5,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "netflix-logo.png",
+      "filename" : "Ekran Resmi 2023-02-12 23.29.40.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -19,6 +19,6 @@
     "version" : 1
   },
   "properties" : {
-    "template-rendering-intent" : "original"
+    "template-rendering-intent" : "template"
   }
 }
