@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C148FE75299C22310055C168 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C148FE74299C22300055C168 /* APICaller.swift */; };
 		C1C4B2E0299913E2009CFC6A /* HeaderHeroImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C4B2DF299913E2009CFC6A /* HeaderHeroImageView.swift */; };
 		C1C4B2E2299976B8009CFC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1C4B2E1299976B8009CFC6A /* Assets.xcassets */; };
 		C1F21B452997C85100AE1048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F21B442997C85100AE1048 /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C148FE74299C22300055C168 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		C1C4B2DF299913E2009CFC6A /* HeaderHeroImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderHeroImageView.swift; sourceTree = "<group>"; };
 		C1C4B2E1299976B8009CFC6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1F21B412997C85100AE1048 /* Netflix Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netflix Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +188,7 @@
 		C1F21B792997C8A600AE1048 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				C148FE74299C22300055C168 /* APICaller.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				C1C4B2E0299913E2009CFC6A /* HeaderHeroImageView.swift in Sources */,
 				C1F21B7D2997CB4F00AE1048 /* SearchViewController.swift in Sources */,
 				C1F21B492997C85100AE1048 /* MainTabBarViewController.swift in Sources */,
+				C148FE75299C22310055C168 /* APICaller.swift in Sources */,
 				C1F21B832997F6AE00AE1048 /* CollectionViewTableViewCell.swift in Sources */,
 				C1F21B812997CB8700AE1048 /* DownloadsViewController.swift in Sources */,
 				C1F21B452997C85100AE1048 /* AppDelegate.swift in Sources */,
