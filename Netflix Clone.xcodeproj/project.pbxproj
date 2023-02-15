@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C148FE75299C22310055C168 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C148FE74299C22300055C168 /* APICaller.swift */; };
+		C148FE77299C27860055C168 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C148FE76299C27860055C168 /* Movie.swift */; };
 		C1C4B2E0299913E2009CFC6A /* HeaderHeroImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C4B2DF299913E2009CFC6A /* HeaderHeroImageView.swift */; };
 		C1C4B2E2299976B8009CFC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1C4B2E1299976B8009CFC6A /* Assets.xcassets */; };
 		C1F21B452997C85100AE1048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F21B442997C85100AE1048 /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		C148FE74299C22300055C168 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		C148FE76299C27860055C168 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C1C4B2DF299913E2009CFC6A /* HeaderHeroImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderHeroImageView.swift; sourceTree = "<group>"; };
 		C1C4B2E1299976B8009CFC6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1F21B412997C85100AE1048 /* Netflix Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netflix Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +176,7 @@
 		C1F21B772997C89500AE1048 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C148FE76299C27860055C168 /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				C1F21B452997C85100AE1048 /* AppDelegate.swift in Sources */,
 				C1F21B472997C85100AE1048 /* SceneDelegate.swift in Sources */,
 				C1F21B7F2997CB5B00AE1048 /* UpComingViewController.swift in Sources */,
+				C148FE77299C27860055C168 /* Movie.swift in Sources */,
 				C1F21B7B2997CB3F00AE1048 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
