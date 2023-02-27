@@ -37,6 +37,6 @@ class TitleCollectionViewCell: UICollectionViewCell {
        }
       
        posterImageView.sd_setImage(with: url)
-       print(url)
+      // print(url)
     }
 }

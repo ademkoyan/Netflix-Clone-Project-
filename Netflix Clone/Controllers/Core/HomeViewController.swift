@@ -40,6 +40,8 @@ class HomeViewController: UIViewController {
         
         configureNavBar()
         
+        navigationController?.pushViewController(TitlePreviewViewController(), animated: true)
+        
     }
     
     override func viewDidLayoutSubviews() {
