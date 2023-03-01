@@ -20,6 +20,9 @@ enum Sections: Int {
 class HomeViewController: UIViewController {
 
     //MARK: -DEF
+    private var randomTrendingMovies: Title?
+    private var headerHeroView: HeaderHeroImageView?
+    
     private let homeFeedTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
@@ -35,18 +38,31 @@ class HomeViewController: UIViewController {
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
         
-        let headerHeroView = HeaderHeroImageView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 375))
+        headerHeroView = HeaderHeroImageView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 375))
         homeFeedTable.tableHeaderView =  headerHeroView
         
         configureNavBar()
-        
-        navigationController?.pushViewController(TitlePreviewViewController(), animated: true)
+        congifureHeroHeaderView()
         
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         homeFeedTable.frame = view.bounds
+    }
+    
+    private func congifureHeroHeaderView() {
+        APICaller.shared.getTrendingMovies { [weak self] result in
+            switch result {
+            case.success(let titles):
+                let selectedTitle = titles.randomElement()
+                self?.randomTrendingMovies = selectedTitle
+                
+                self?.headerHeroView?.configure(with: TitleViewModel(titleName: selectedTitle?.original_title ?? "", posterUrl: selectedTitle?.poster_path ?? ""))
+            case.failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     private func configureNavBar() {
@@ -89,6 +105,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as? CollectionViewTableViewCell else {
             return UITableViewCell()
         }
+        
+        cell.delegate = self
+        
         switch indexPath.section {
         case Sections.TrendinMovies.rawValue:
             APICaller.shared.getTrendingMovies { result in switch result {
@@ -164,5 +183,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let offSet = scrollView.contentOffset.y + defaultOfSet
         
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offSet))
+    }
+}
+
+extension HomeViewController: CollectionTableViewCellDelegate {
+    func CollectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, viewModel: TitlePreviewViewModel) {
+        DispatchQueue.main.async { [weak self] in
+            let vc = TitlePreviewViewController()
+            vc.configure(with: viewModel)
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

@@ -12,9 +12,9 @@ class HeaderHeroImageView: UIView {
     //MARK: -DEF
     private let headerImageView: UIImageView = {
         let headerView = UIImageView()
-        headerView.contentMode = .scaleToFill
+        headerView.contentMode = .scaleAspectFill
         headerView.clipsToBounds = true
-        headerView.image = UIImage(named: "theBoys")
+       // headerView.image = UIImage(named: "theBoys")
         return headerView
     }()
     
@@ -83,6 +83,14 @@ class HeaderHeroImageView: UIView {
         
         NSLayoutConstraint.activate(playButtonConstraite)
         NSLayoutConstraint.activate(downloadButtonConstraite)
+    }
+    
+    public func configure(with model: TitleViewModel) {
+        guard let url = URL(string: "https://image.tmdb.org/t/p/w500\(model.posterUrl)") else {
+            return
+        }
+        
+        headerImageView.sd_setImage(with: url)
     }
 
 }
